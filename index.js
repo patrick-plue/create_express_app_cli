@@ -61,3 +61,5 @@ shell.exec(`cd ${dir}; npm i -D nodemon`);
 
 shell.echo('Initializing git');
 shell.exec(`cd ${dir}; git init`);
+
+shell.echo(`cd ${dir} and happy coding`);
