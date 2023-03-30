@@ -25,6 +25,8 @@ fs.mkdirSync(`${dir}/routes`);
 fs.mkdirSync(`${dir}/controller`);
 fs.mkdirSync(`${dir}/models`);
 
+shell.exec(`touch db.js`);
+
 fs.copyFile(
   path.join(__dirname, 'template/app.js'),
   `${dir}/app.js`,
@@ -42,16 +44,6 @@ fs.copyFile(
     if (error) printError('error copying .gitignore: ' + error);
   }
 );
-// fs.copyFile(
-//   path.join(__dirname, 'template/package.json'),
-//   `${dir}/package.json`,
-//   (error) => {
-//     if (error) printError('error copying package.json: ' + error);
-//   }
-// );
-fs.copyFile(path.join(__dirname, 'template/db.js'), `${dir}/db.js`, (error) => {
-  if (error) printError('error copying db.js: ' + error);
-});
 fs.copyFile(
   path.join(__dirname, 'template/index.js'),
   `${dir}/index.js`,
