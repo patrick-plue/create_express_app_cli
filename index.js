@@ -64,7 +64,8 @@ shell.echo('Generating package.json');
 shell.exec(`cd ${dir}; npm init -y`);
 
 shell.echo('Installing nodemon express dotenv');
-shell.exec(`cd ${dir}; npm i nodemon express dotenv`);
+shell.exec(`cd ${dir}; npm i express dotenv`);
+shell.exec(`cd ${dir}; npm i -D nodemon`);
 
 shell.echo('Initializing git');
 shell.exec(`cd ${dir}; git init`);
