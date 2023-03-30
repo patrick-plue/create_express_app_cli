@@ -25,7 +25,7 @@ fs.mkdirSync(`${dir}/routes`);
 fs.mkdirSync(`${dir}/controller`);
 fs.mkdirSync(`${dir}/models`);
 
-shell.exec(`touch db.js`);
+shell.exec(`cd ${dir};touch db.js`);
 
 fs.copyFile(
   path.join(__dirname, 'template/app.js'),
