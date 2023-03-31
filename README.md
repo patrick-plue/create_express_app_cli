@@ -4,22 +4,16 @@ clone repo, cd to directory and run npm link to make it globally available
 
 ---
 
-run npx create_express_app [directory-name] to create a directory with boilerplate code:
+run npx create_express_app [directory-name] to create a directory with boilerplate code
 
 ---
 
-cd [directory-name]
-run npm install
-
----
-
-dependencies:
+It will install following dependencies
 
 - express
 - nodemon
 - dotenv
 
-### 1st version
+It will generate a package.json with the default values
 
-- copying from a template - no options
-- CommonJS
+It will initalize a git directory
