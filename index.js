@@ -26,6 +26,7 @@ fs.mkdirSync(`${dir}/controller`);
 fs.mkdirSync(`${dir}/models`);
 
 shell.exec(`cd ${dir};touch db.js`);
+shell.exec(`cd ${dir};touch .env`);
 
 fs.copyFile(
   path.join(__dirname, 'template/app.js'),
@@ -34,9 +35,6 @@ fs.copyFile(
     if (error) printError('error copying app.js: ' + error);
   }
 );
-fs.copyFile(path.join(__dirname, 'template/.env'), `${dir}/.env`, (error) => {
-  if (error) printError('error copying .env: ' + error);
-});
 fs.copyFile(
   path.join(__dirname, 'template/.gitignore'),
   `${dir}/.gitignore`,
