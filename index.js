@@ -25,9 +25,6 @@ fs.mkdirSync(`${dir}/routes`);
 fs.mkdirSync(`${dir}/controller`);
 fs.mkdirSync(`${dir}/models`);
 
-shell.exec(`cd ${dir};touch db.js`);
-shell.exec(`cd ${dir};touch .env`);
-
 fs.copyFile(
   path.join(__dirname, 'template/app.js'),
   `${dir}/app.js`,
@@ -50,14 +47,19 @@ fs.copyFile(
   }
 );
 
+shell.cd(`${dir}`);
+
+shell.exec(`touch db.js`);
+
+shell.exec(`touch .env`);
 shell.echo('Generating package.json');
-shell.exec(`cd ${dir}; npm init -y`);
+shell.exec(`npm init -y`);
 
 shell.echo('Installing nodemon express dotenv');
-shell.exec(`cd ${dir}; npm i express dotenv`);
-shell.exec(`cd ${dir}; npm i -D nodemon`);
+shell.exec(` npm i express dotenv`);
+shell.exec(` npm i -D nodemon`);
 
 shell.echo('Initializing git');
-shell.exec(`cd ${dir}; git init`);
+shell.exec(`git init`);
 
 shell.echo(`cd ${dir} and happy coding`);
