@@ -24,6 +24,7 @@ fs.mkdirSync(dir);
 fs.mkdirSync(`${dir}/routes`);
 fs.mkdirSync(`${dir}/controller`);
 fs.mkdirSync(`${dir}/models`);
+fs.mkdirSync(`${dir}/middlewares`);
 
 fs.copyFile(
   path.join(__dirname, 'template/app.js'),
