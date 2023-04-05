@@ -55,7 +55,7 @@ shell.exec(`touch .env`);
 shell.echo('Generating package.json');
 shell.exec(`npm init -y`);
 
-shell.echo('Installing nodemon express dotenv');
+shell.echo('Installing express dotenv');
 shell.exec(` npm i express `);
 shell.exec(` npm i -D nodemon dotenv`);
 
