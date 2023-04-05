@@ -1,5 +1,7 @@
 ## GENRERATE EXPRESS APP FROM THE COMMAND LINE
 
+at least Node v.18.11.0
+
 clone repo, cd to directory and run npm link to make it globally available
 
 ---
@@ -19,3 +21,5 @@ It will generate a package.json with the default values
 It will initalize a git directory
 
 add this to the package json as script
+"dev": "node --require dotenv/config --watch index.js",
+"start": "node index.js"

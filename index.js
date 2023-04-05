@@ -57,7 +57,7 @@ shell.exec(`npm init -y`);
 
 shell.echo('Installing express dotenv');
 shell.exec(` npm i express `);
-shell.exec(` npm i -D nodemon dotenv`);
+shell.exec(` npm i -D dotenv`);
 
 shell.echo('Initializing git');
 shell.exec(`git init`);
