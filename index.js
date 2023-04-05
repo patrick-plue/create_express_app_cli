@@ -50,14 +50,13 @@ fs.copyFile(
 shell.cd(`${dir}`);
 
 shell.exec(`touch db.js`);
-
 shell.exec(`touch .env`);
 shell.echo('Generating package.json');
 shell.exec(`npm init -y`);
 
 shell.echo('Installing nodemon express dotenv');
-shell.exec(` npm i express dotenv`);
-shell.exec(` npm i -D nodemon`);
+shell.exec(` npm i express `);
+shell.exec(` npm i -D nodemon dotenv`);
 
 shell.echo('Initializing git');
 shell.exec(`git init`);

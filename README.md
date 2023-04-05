@@ -17,3 +17,5 @@ It will install following dependencies
 It will generate a package.json with the default values
 
 It will initalize a git directory
+
+add this to the package json as script
