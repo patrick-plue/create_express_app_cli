@@ -2,6 +2,8 @@
 import shell from 'shelljs';
 import fs from 'fs';
 import path from 'path';
+import * as url from 'url';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const colorError = '\x1b[31m';
 const printError = (message) => console.error(colorError, message);
@@ -11,12 +13,12 @@ const dir = process.argv[2];
 shell.echo('Generating express app');
 
 if (!dir)
-  return printError(
+  printError(
     'please enter project name, run: npx express-generator-cli [project-name]'
   );
 
 if (fs.existsSync(dir))
-  return printError('directory exists, please choose another name');
+  printError('directory exists, please choose another name');
 
 fs.mkdirSync(dir);
 fs.mkdirSync(`${dir}/routes`);
@@ -63,6 +65,7 @@ shell.echo('Generating package.json');
 
 shell.echo('Installing express dotenv');
 shell.exec(` npm i express `);
+shell.exec(` npm i -D nodemon `);
 shell.exec(` npm i -D dotenv`);
 
 shell.echo('Initializing git');
