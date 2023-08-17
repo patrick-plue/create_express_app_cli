@@ -1,17 +1,16 @@
 {
-  "name": "create_express_app",
+  "name": "express_app",
   "bin": "./index.js",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon --require dotenv/config index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "shelljs": "^0.8.5"
-  }
+  "dependencies": {}
 }

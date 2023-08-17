@@ -1,9 +1,7 @@
 #!/usr/bin/env node
-
-const shell = require('shelljs');
-
-const fs = require('fs');
-const path = require('path');
+import shell from 'shelljs';
+import fs from 'fs';
+import path from 'path';
 
 const colorError = '\x1b[31m';
 const printError = (message) => console.error(colorError, message);
@@ -22,9 +20,10 @@ if (fs.existsSync(dir))
 
 fs.mkdirSync(dir);
 fs.mkdirSync(`${dir}/routes`);
-fs.mkdirSync(`${dir}/controller`);
+fs.mkdirSync(`${dir}/controllers`);
 fs.mkdirSync(`${dir}/models`);
 fs.mkdirSync(`${dir}/middlewares`);
+fs.mkdirSync(`${dir}/utils`);
 
 fs.copyFile(
   path.join(__dirname, 'template/app.js'),
@@ -48,12 +47,19 @@ fs.copyFile(
   }
 );
 
+fs.copyFile(
+  path.join(__dirname, 'template/package.json'),
+  `${dir}/package.json`,
+  (error) => {
+    if (error) printError('error copying package.json: ' + error);
+  }
+);
+
 shell.cd(`${dir}`);
 
 shell.exec(`touch db.js`);
 shell.exec(`touch .env`);
 shell.echo('Generating package.json');
-shell.exec(`npm init -y`);
 
 shell.echo('Installing express dotenv');
 shell.exec(` npm i express `);
