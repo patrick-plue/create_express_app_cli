@@ -1,4 +1,4 @@
-## GENRERATE EXPRESS APP FROM THE COMMAND LINE
+## Simple Boilerplate Code for ExpressJS App
 
 at least Node v.18.11.0
 
